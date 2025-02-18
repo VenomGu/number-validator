@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Telephone number validator</title>
+</head>
+<body>
+    <main>
+    <h1 id="title">
+        Telephone number validator
+    </h1>
+    <div id="phone-container">
+        <div id="phone-background">
+            <div id="phone-camera"></div>
+        </div>
+        <label for="user-input">Enter a phone number: </label>
+        <input maxlength="20" type="text" id="user-input" value>
+        <div id="results-div"></div>
+        <div class="phone-footer">
+            <button class="btn-styles" id="check-btn">Check</button>
+            <button class="btn-styles" id="clear-btn">Clear</button>
+        </div>
+    </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
+<!-- 
+35. When the #user-input element contains a valid US number and the #check-btn element is clicked, the #results-div element should contain the text "Valid US number: " followed by the number.
+
+Failed:36. When the #user-input element contains an invalid US number and the #check-btn element is clicked, the #results-div element should contain the text "Invalid US number: " followed by the number.
+
+-->
