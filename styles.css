@@ -4,11 +4,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
 /* Corpo da página */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #3b3b4f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,28 +26,58 @@ body {
 #title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
+  margin-top: 30px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 }
 
 /* Contêiner principal */
 #phone-container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
+  position: relative;
+  background-color: #bdbdbd;
+  width: 250px;
+  height: 460px;
+  margin: 30px auto;
+  border-radius: 15px;
+  border: 15px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Fundo do telefone */
 #phone-background {
+  background-color: black;
   width: 100%;
-  height: 120px;
-  background-color: #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  height: 25px;
+}
+
+/* Camera do telefone */
+#phone-camera {
+  background-color: rgb(129, 129, 129);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.phone-footer {
+  background-color: black;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Div para resultados */
@@ -52,15 +89,22 @@ body {
 
 /* Estilo dos botões */
 .btn-styles {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
-  margin: 5px;
-  transition: background-color 0.3s;
+  width: 100px;
+  margin: 10px;
+  color: #0a0a23;
+  font-size: 18px;
+  background-color: #ffffff;
+  background-image: linear-gradient(#ffffff, #928d86);
+  border-color: #ffffff;
+  border-width: 3px;
+}
+
+#phone-label {
+  color: #363636;
+  margin: 10px 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
 }
 
 /* Efeito ao passar o mouse nos botões */
@@ -70,20 +114,47 @@ body {
 
 /* Estilo do campo de entrada */
 #user-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  height: 42px;
+  font-size: 16px;
 }
 
-/* Estilo da área de resultados (validando com cor) */
 #results-div {
-  color: #d9534f; /* Vermelho para inválido */
+  font-size: 1rem;
+  padding: 5px;
+  text-align: center;
+  margin: 10px 0;
+}
+p {
+  color: #3b3f14;
+  font-size: 1.2rem;
+  font-weight: normal;
+  padding-bottom: 10px;
 }
 
-/* Estilo para resultados válidos */
-#results-div.valid {
-  color: #5bc0de; /* Azul para válido */
+#flags-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  #brazilian-flag {
+    cursor: pointer;
+  }
+
+  #us-flag {
+    cursor: pointer;
+  }
+}
+
+#flags-label {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: lighter;
 }
